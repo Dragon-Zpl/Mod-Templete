@@ -14,23 +14,23 @@ configs.redis = {
     "db": "1",
 }
 
-configs.mysql = {"host": "120.79.2.95",
+configs.mysql = {"host": "",
                  "port": 3306,
                  "user": "root",
                  "password": "",
-                 "database": "google_play",
+                 "database": "",
                  "charset": "utf8"}
 
-configs.DES3 = {"key": "4d9f0c946572aa6e6d34f2db",
-                "appkey": "tutuappandroidweb"}
+configs.DES3 = {"key": "",
+                "appkey": ""}
 
 configs.logger_dict = {'version': 1, 'disable_existing_loggers': False, 'formatters': {'simple': {'format': '%(asctime)s - %(filename)s - %(lineno)s %(levelname)s - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'level': 'DEBUG', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}}, 'loggers': {'my_module': {'level': 'ERROR', 'handlers': ['console'], 'propagate': False}}, 'root': {'level': 'INFO', 'handlers': ['console']}}
 
 configs.email = {
-    "sender": "786283772@qq.com",
+    "sender": "",
     "host": "smtp.qq.com",
-    "user": "786283772@qq.com",
-    "password": "lxnctbyxqaupbbha",
+    "user": "",
+    "password": "",
     "from": "破解包测试",
     "subject": "这就是个测试",
 }
