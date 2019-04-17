@@ -15,7 +15,7 @@ class Fetch:
         self.proxies = []
         self.lock = Lock()
 
-    async def fetch(self, url, headers=headers, proxy=None, times=3, etree_html=True):
+    async def fetch(self, url, headers=headers, proxy=None, times=3, etree_html=False):
         try:
             async with session.get(url, headers=headers, proxy=proxy, timeout=15) as r:
                 if r.status in [200, 201]:
