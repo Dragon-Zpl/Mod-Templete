@@ -69,7 +69,7 @@ class Item(metaclass=ItemMetaclass):
         try:
             return self.results[key]
         except KeyError:
-            raise AttributeError(r"'Model' object has no attribute '%s'" % key)
+            return False
 
     # 允许动态设置key的值，不仅仅可以d[k]，也可以d.k
     def __setitem__(self, key, value):
