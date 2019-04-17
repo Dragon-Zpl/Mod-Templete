@@ -9,14 +9,14 @@ from spider.fetcher import Fetch
 
 
 class BaseWorker(metaclass=ABCMeta):
-    def __init__(self, parser, *, url=None, mysql_helper=None, filter=None, PostModData=None):
+    def __init__(self, parser, *, url=None, mysql_helper=None, filter=None, PostModData=None, check_url=None):
         self.crawler_url = url
         self.parser = parser()
-        self.mysql_helper = mysql_helper
-        self.fetcher = Fetch()
+        self.mysql_helper = mysql_helper()
+        self.fetcher = Fetch(check_url=check_url)
         self.downloader = Downloader()
-        self.filter = filter
-        self.PostModData = PostModData
+        self.filter = filter()
+        self.PostModData = PostModData()
 
     @abstractmethod
     def _get_crawler_url(self, *args, **kwargs):

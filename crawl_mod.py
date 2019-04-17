@@ -1,6 +1,6 @@
 from spider.item import Item
 from spider.parse import Parser
-from spider.selector import Xpath
+from spider.selector import *
 from spider.worker import BaseWorker
 from config.configs_ import *
 
@@ -34,14 +34,11 @@ class Crawl(BaseWorker):
 
 
 class InfoItem(Item):
-    get_app_urls = Xpath("//div[@class='while_apps']//div[@class='item_holder']/a/@href")
     categories = Xpath("//div[@class='info']//div[1]//a//text()")
     version = Xpath("//div[@class='info']//div[4]/text()")
     os = Xpath("//div[@class='info']//div[5]/text()")
     internet = Xpath("//div[@class='info']//div[6]/text()")
     size = Xpath("//div[@class='info']//div[7]/text()")
-    raiting = Xpath("//div[@class='info']//div[8]/text()")
-    russian = Xpath("//div[@class='info']//div[9]/text()")
     pkg_name = Xpath("//h1[@itemprop='name']//text()")
     img_urls = Xpath("//img/@src")
     description = Xpath("//div[@itemprop='description']//text()")
@@ -57,10 +54,11 @@ class InfoItem(Item):
 
 class info_parse(Parser):
     def _parse(self, html):
-        print('i comein')
         item_dict = InfoItem(html)
-        print('item_dict:'+str(item_dict))
+        if len(item_dict["categories"]) > 1:
+            item_dict["categories"] = ','.join(item_dict["categories"])
+
         return item_dict
 
-t = Crawl(info_parse)
+t = Crawl(info_parse,check_url="https://www.androeed.ru")
 t.run()
