@@ -18,7 +18,8 @@ class Crawl(BaseWorker):
         results = loop.run_until_complete(tasks)
         url_set = set()
         for html in results:
-            self.get_url_parse(html, url_set)
+            if html:
+                self.get_url_parse(html, url_set)
         return url_set
 
     def get_url_parse(self, html, url_set):
@@ -26,6 +27,7 @@ class Crawl(BaseWorker):
         content = etree.HTML(html)
         urls = content.xpath("//div[@class='while_apps']//div[@class='item_holder']/a/@href")
         for url in urls:
+            print('url:'+url)
             url_set.add(host+url)
     def _get_apk_tpk_download_url(self):
         pass
@@ -56,6 +58,7 @@ class InfoItem(Item):
 class info_parse(Parser):
     def _parse(self, html:str):
         item_dict = InfoItem(html)
+        print('item_dict:'+str(item_dict))
         return item_dict
 
 t = Crawl(info_parse)
