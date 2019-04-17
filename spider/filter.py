@@ -7,6 +7,7 @@ class Filter(metaclass=ABCMeta):
         return True
 
     def filter(self, *args, **kwargs):
+        print('fiter jiekou')
         """
         过滤app
         :return:

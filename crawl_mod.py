@@ -146,6 +146,7 @@ class info_parse(Parser):
 
 class mod_filter(Filter):
     def _filter(self, *args, **kwargs):
+        print('start filter')
         return True
 
 t = Crawl(info_parse, mod_filter, check_url="https://www.androeed.ru")
