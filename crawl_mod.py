@@ -1,4 +1,5 @@
 from spider.fetcher import Fetch
+from spider.filter import Filter
 from spider.item import Item
 from spider.parse import Parser
 from spider.selector import *
@@ -8,7 +9,6 @@ mod_pkg_url = "https://www.androeed.ru/index.php?m=files&f=load_comm_dapda_otsos
 host = "https://www.androeed.ru"
 class Crawl(BaseWorker):
     def _get_crawler_url(self):
-        print('start')
         tasks = []
         mods_urls = ["https://www.androeed.ru/files/vzlomannie_igri_na_android-" + str(page) + ".html?hl=en" for
                           page in range(1, 6)]
@@ -30,9 +30,14 @@ class Crawl(BaseWorker):
         for url in urls:
             print('url:'+url)
             url_set.add(host+url)
-    def _get_apk_tpk_download_url(self):
-        pass
 
+    def _get_apk_tpk_download_url(self, data):
+        download_list = data["download_first_url"]
+        apk_download_url = download_list[0]
+        zip_download_url = ""
+        if len(download_list) > 1 and download_list[1] != "need_info":
+            zip_download_url = download_list[1]
+        return apk_download_url, zip_download_url
 
 class InfoItem(Item):
     categories = Xpath("//div[@class='info']//div[1]//a//text()")
@@ -44,8 +49,6 @@ class InfoItem(Item):
     re_img_urls = Regex(r"\('#images_while'\)\.load[\d\D]+?\)")
     description = Xpath("//div[@itemprop='description']//text()")
     icon = Xpath("//meta[@property='og:image']/@content | //div[@class='c in_holder']/img/@data-src")
-    download_second_url = Xpath("//a[@id='download_up']/@href")
-    md5 = Xpath("//div[@class='c']//strong/text()")
     app_url = Xpath("//meta[@property='og:type']/@content")
     mod_number = Xpath("//meta[@property='og:image']/@content")
     img_urls = Xpath("//div[@class='inl']/img/@data-src")
@@ -55,7 +58,7 @@ class info_parse(Parser):
         self.fetch = Fetch()
     def _parse(self, html):
         item_dict = InfoItem(html)
-        if len(item_dict["categories"]) > 1:
+        if type(item_dict["categories"]) == list:
             item_dict["categories"] = ','.join(item_dict["categories"])
 
         if item_dict["pkg_name"] and '[' in item_dict["pkg_name"]:
@@ -68,7 +71,7 @@ class info_parse(Parser):
             item_dict["name"] = ""
             item_dict["what_news"] = ""
         item_dict["version"] = item_dict["version"].strip(" ")
-        if len(item_dict["img_urls"]) > 1:
+        if type(item_dict["img_urls"]) == list:
             item_dict["img_urls"] = ','.join(item_dict["img_urls"])
         else:
             item_dict["img_urls"] = item_dict["re_img_urls"]
@@ -139,7 +142,11 @@ class info_parse(Parser):
                         logger.info("error:{},url:{}".format(e, item_dict["app_url"]))
                         item_dict["download_first_url"] = []
         print(item_dict)
-        return item_dict
+        return item_dict, item_dict["name"]
 
-t = Crawl(info_parse,check_url="https://www.androeed.ru")
+class mod_filter(Filter):
+    def filter(self, *args, **kwargs):
+        return True
+
+t = Crawl(info_parse, mod_filter, check_url="https://www.androeed.ru")
 t.run()

@@ -2,8 +2,9 @@ from abc import ABCMeta,abstractmethod
 
 class Filter(metaclass=ABCMeta):
     @abstractmethod
-    def _filter(self, *args, **kwargs):
-        pass
+    def _filter(self, *args, **kwargs)->bool:
+
+        return True
 
     def filter(self, *args, **kwargs):
         """

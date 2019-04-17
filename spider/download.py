@@ -23,7 +23,7 @@ class Downloader:
     """
     下载apk 合成tpk包 wget
     """
-    def file_path_detail(self):
+    def _file_path_detail(self):
         now = datetime.datetime.now()
         now_date = now.strftime('%Y-%m-%d')
         download_dir = PKGSTORE + now_date + "/"
@@ -127,7 +127,7 @@ class Downloader:
     def _build_tpk(self, basic_dir, obbpath, dict_tpk, image_url, unique):
         tpkdir = basic_dir + hashlib.md5((unique).encode('utf-8')).hexdigest()
         config_info = self.encryptapkinfo(dict_tpk, key, appkey)
-        self.writeencryptapkinfo(config_info, tpkdir)
+        self._writeencryptapkinfo(config_info, tpkdir)
         self.downIcon(tpkdir,image_url)
         obbname = obbpath.split('/')[-1]
         logger.info(obbname)
@@ -168,7 +168,7 @@ class Downloader:
              'verify': verify}, cls=MyEncoder)).encode('utf-8'))
         return cbc_base
 
-    def writeencryptapkinfo(self, config_info, tpkdir):
+    def _writeencryptapkinfo(self, config_info, tpkdir):
         des3_configinfo = config_info
         if not os.path.exists(tpkdir):
             os.makedirs(tpkdir)
@@ -196,15 +196,15 @@ class Downloader:
             shutil.move(srcfile, dstfile)  # 移动文件
             logger.info("move %s -> %s" % (srcfile, dstfile))
 
-
     def run(self, apk_url, unique, icon_url=None, app_name=None, zip_url=None, developer=None):
         """
         暴露的接口
         :return: apk的信息
         """
+        logger.info('{} start download'.format(app_name))
         msg = {"apkpath": "", "error": ""}
         try:
-            basic_dir = self.file_path_detail()
+            basic_dir = self._file_path_detail()
             if not os.path.exists(basic_dir):
                 os.makedirs(basic_dir)
             basic = basic_dir + hashlib.md5((unique).encode('utf-8')).hexdigest()
@@ -220,7 +220,20 @@ class Downloader:
                     msg["apkpath"] = tpk_path
                 else:
                     msg["error"] = "obb download faile,can,t build tpk"
+            else:
+                aapk_str = 'aapt dump badging {} > tmp.txt'.format(apk_path)
+                os.system(aapk_str)
+                with open('tmp.txt', 'r', encoding='utf8', errors='ignore') as f:
+                    result = f.readlines()
+                results = ''.join(result)
+                try:
+                    pkgname = re.search(r'package: name=\'(.*?)\'', results).group(1)
+                    msg["pkgname"] = pkgname
+                    logger.info("pkgname is {}".format(pkgname))
+                except:
+                    logger.info("re pkgname error")
+                    return
         except Exception as e:
             msg["error"] = str(e)
-
+        logger.info('download end :{}'.format(str(msg)))
         return msg

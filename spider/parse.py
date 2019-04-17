@@ -7,13 +7,12 @@ class Parser(metaclass=ABCMeta):
     """
 
     @abstractmethod
-    def _parse(self, html) ->dict:
-        print('__parse come in')
-        return {}
+    def _parse(self, html)->(dict, str):
+        unique = ""
+        return {},unique
 
-    def parse(self, html) -> dict:
+    def parse(self, html):
         """暴露的接口"""
-        print('parse comein ')
         return self._parse(html)
 
 
