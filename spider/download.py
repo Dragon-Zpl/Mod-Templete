@@ -215,6 +215,7 @@ class Downloader:
                 zip_path = basic + '.zip'
                 self._download_zip(zip_url, zip_path)
                 dict_tpk, obb_path = self.configinfo(app_name, apk_path, zip_path, developer)
+                msg["pkgname"] = dict_tpk["pkg_name"]
                 if dict_tpk and obb_path:
                     tpk_path = self._build_tpk(basic_dir, obb_path, dict_tpk, icon_url, unique)
                     msg["apkpath"] = tpk_path
