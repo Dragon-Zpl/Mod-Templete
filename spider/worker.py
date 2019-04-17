@@ -11,7 +11,7 @@ from spider.fetcher import Fetch
 class BaseWorker(metaclass=ABCMeta):
     def __init__(self, parser, *, url=None, mysql_helper=None, filter=None, PostModData=None):
         self.crawler_url = url
-        self.parser = parser
+        self.parser = parser()
         self.mysql_helper = mysql_helper
         self.fetcher = Fetch()
         self.downloader = Downloader()
@@ -45,8 +45,8 @@ class BaseWorker(metaclass=ABCMeta):
         :param html:
         :return: dict
         """
-        print('into info_parse'+str(html))
-        return self.parser.parse(html)
+        print('into info_parse')
+        return self.parser.parse(html=html)
 
     def _compare_version(self, old_version:str, new_version:str) ->bool:
         """
