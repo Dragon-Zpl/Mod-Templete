@@ -14,8 +14,7 @@ class BaseWorker(metaclass=ABCMeta):
         self.parser = parser()
         self.fetcher = Fetch(check_url=check_url)
         self.downloader = Downloader()
-        if filter is not None:
-            self.filter = filter()
+        self.filter = filter()
         self.PostModData = PostModData()
         self.post_url = post_url
     @abstractmethod
@@ -44,7 +43,6 @@ class BaseWorker(metaclass=ABCMeta):
         :param html:
         :return: dict
         """
-        print('into info_parse')
         return self.parser.parse(html=html)
 
     def _downloader(self, apk_url, unique, icon_url=None, app_name=None, zip_url=None, developer=None):

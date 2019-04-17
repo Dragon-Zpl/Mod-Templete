@@ -27,8 +27,6 @@ class ItemMetaclass(type):
         if name == 'Selector':
             """不能选择基类选择器"""
             return type.__new__(cls, name, bases, attrs)
-        print('name:'+str(name))
-        print('attr:'+str(attrs))
         selectors = {}
         for k, v in attrs.items():
             if isinstance(v, Selector):

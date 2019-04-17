@@ -57,6 +57,7 @@ class info_parse(Parser):
     def __init__(self):
         self.fetch = Fetch()
     def _parse(self, html):
+        logger.info('start parse')
         item_dict = InfoItem(html)
         if type(item_dict["categories"]) == list:
             item_dict["categories"] = ','.join(item_dict["categories"])
@@ -145,9 +146,11 @@ class info_parse(Parser):
         return item_dict, item_dict["name"]
 
 class mod_filter(Filter):
+    def __init__(self):
+        print('gouzao chenggong')
     def _filter(self, *args, **kwargs):
         print('start filter')
         return True
 
-t = Crawl(info_parse, mod_filter, check_url="https://www.androeed.ru")
+t = Crawl(parser=info_parse, filter=mod_filter, check_url="https://www.androeed.ru")
 t.run()
