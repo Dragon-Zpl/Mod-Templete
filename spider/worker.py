@@ -45,6 +45,7 @@ class BaseWorker(metaclass=ABCMeta):
         :param html:
         :return: dict
         """
+        print('into info_parse'+str(html))
         return self.parser.parse(html)
 
     def _compare_version(self, old_version:str, new_version:str) ->bool:

@@ -7,11 +7,11 @@ class Parser(metaclass=ABCMeta):
     """
 
     @abstractmethod
-    def _parse(self, html:str) ->dict:
+    def _parse(self, html) ->dict:
         print('__parse come in')
         return {}
 
-    def parse(self, html:str) -> dict:
+    def parse(self, html) -> dict:
         """暴露的接口"""
         print('parse comein ')
         return self._parse(html)
