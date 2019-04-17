@@ -142,7 +142,7 @@ class info_parse(Parser):
                     except Exception as e:
                         logger.info("error:{},url:{}".format(e, item_dict["app_url"]))
                         item_dict["download_first_url"] = []
-        print(item_dict)
+        print(type(item_dict))
         return item_dict, item_dict["name"]
 
 class mod_filter(Filter):
