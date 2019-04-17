@@ -24,6 +24,7 @@ class BaseWorker(metaclass=ABCMeta):
         返回所有app详情的url
         :return: list
         """
+        print('this is yuanlei')
         url_list = []
         return url_list
 

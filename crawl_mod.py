@@ -5,8 +5,8 @@ from spider.worker import BaseWorker
 from config.configs_ import *
 
 class Crawl(BaseWorker):
-
     def _get_crawler_url(self):
+        print('start')
         tasks = []
         mods_urls = ["https://www.androeed.ru/files/vzlomannie_igri_na_android-" + str(page) + ".html?hl=en" for
                           page in range(1, 6)]
