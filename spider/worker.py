@@ -93,8 +93,9 @@ class BaseWorker(metaclass=ABCMeta):
         htmls = loop.run_until_complete(asyncio.gather(*tasks))
         results = []
         for html in htmls:
-            result = self._info_parser(html)
-            results.append(result)
+            if html:
+                result = self._info_parser(html)
+                results.append(result)
         return results
     def run(self):
         """

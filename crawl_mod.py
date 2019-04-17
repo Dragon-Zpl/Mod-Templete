@@ -56,7 +56,8 @@ class InfoItem(Item):
     img_urls2 = Xpath("//div[@class='inl']/img/@data-src")
 
 class info_parse(Parser):
-    def _parse(self, html:str):
+    def _parse(self, html):
+        print('i comein')
         item_dict = InfoItem(html)
         print('item_dict:'+str(item_dict))
         return item_dict
