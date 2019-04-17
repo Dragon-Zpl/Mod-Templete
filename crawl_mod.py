@@ -93,7 +93,7 @@ class info_parse(Parser):
             item_dict["description"] = ''.join(item_dict["description"])
         
         if item_dict["mod_number"]:
-            temp = re.findall("\d+", item_dict["mod_number2"])
+            temp = re.findall("\d+", item_dict["mod_number"])
             if temp:
                 download_url = temp[-1]
                 data = loop.run_until_complete(self.fetch.fetch(url=mod_pkg_url+download_url))
