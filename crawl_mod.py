@@ -138,7 +138,7 @@ class info_parse(Parser):
                     except Exception as e:
                         logger.info("error:{},url:{}".format(e, item_dict["app_url"]))
                         item_dict["download_first_url"] = []
-        
+        print(item_dict)
         return item_dict
 
 t = Crawl(info_parse,check_url="https://www.androeed.ru")
