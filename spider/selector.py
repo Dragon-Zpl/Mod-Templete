@@ -7,7 +7,7 @@ from pyquery import PyQuery as pq
 
 
 class Selector:
-    def __init__(self, rule: str = None, func: function = None, attr: bool = None):
+    def __init__(self, rule: str = None, func = None, attr: bool = None):
         self.rule = rule
         self.attr = attr
         self.func = func
