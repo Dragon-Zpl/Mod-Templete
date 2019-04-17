@@ -15,7 +15,7 @@ class Crawl(BaseWorker):
         tasks.append(task)
         task = asyncio.ensure_future(self.fetcher.fetch(app_url))
         tasks.append(task)
-        results = loop.run_until_complete(tasks)
+        results = loop.run_until_complete(asyncio.gather(*tasks))
         url_set = set()
         for html in results:
             if html:
