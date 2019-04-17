@@ -58,7 +58,7 @@ class info_parse(Parser):
         self.fetch = Fetch()
     def _parse(self, html):
         logger.info('start parse')
-        item_dict = dict(InfoItem(html))
+        item_dict = InfoItem(html)
         if type(item_dict["categories"]) == list:
             item_dict["categories"] = ','.join(item_dict["categories"])
 

@@ -80,7 +80,7 @@ class BaseWorker(metaclass=ABCMeta):
                 result,unique = self._info_parser(html)
                 if self._filter(result):
                     apk_download_url, zip_download_url = self._get_apk_tpk_download_url(result)
-                    if "developer" in result.key():
+                    if result["developer"]:
                         download_result = self.downloader.run(apk_url=apk_download_url, unique=unique, icon_url=result["icon"],
                                                               app_name=result["name"], zip_url=zip_download_url, developer=result["developer"])
                     else:
