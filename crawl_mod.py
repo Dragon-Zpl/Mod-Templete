@@ -58,7 +58,7 @@ class info_parse(Parser):
         self.fetch = Fetch()
     def _parse(self, html):
         logger.info('start parse')
-        item_dict = InfoItem(html)
+        item_dict = dict(InfoItem(html))
         if type(item_dict["categories"]) == list:
             item_dict["categories"] = ','.join(item_dict["categories"])
 
@@ -142,7 +142,6 @@ class info_parse(Parser):
                     except Exception as e:
                         logger.info("error:{},url:{}".format(e, item_dict["app_url"]))
                         item_dict["download_first_url"] = []
-        print(type(item_dict))
         return item_dict, item_dict["name"]
 
 class mod_filter(Filter):

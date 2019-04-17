@@ -78,7 +78,6 @@ class BaseWorker(metaclass=ABCMeta):
             if html:
                 result_dict = {}
                 result,unique = self._info_parser(html)
-                result = dict(result)
                 if self._filter(result):
                     apk_download_url, zip_download_url = self._get_apk_tpk_download_url(result)
                     if "developer" in result.key():
