@@ -12,11 +12,11 @@ class Crawl(BaseWorker):
         tasks = []
         mods_urls = ["https://www.androeed.ru/files/vzlomannie_igri_na_android-" + str(page) + ".html?hl=en" for
                           page in range(1, 6)]
-        app_url = "https://www.androeed.ru/android/programmy.html?hl=en"
+        # app_url = "https://www.androeed.ru/android/programmy.html?hl=en"
         task = asyncio.ensure_future(self.fetcher.fetch(url=mods_urls[0]))
         tasks.append(task)
-        task = asyncio.ensure_future(self.fetcher.fetch(app_url))
-        tasks.append(task)
+        # task = asyncio.ensure_future(self.fetcher.fetch(app_url))
+        # tasks.append(task)
         results = loop.run_until_complete(asyncio.gather(*tasks))
         url_set = set()
         for html in results:
