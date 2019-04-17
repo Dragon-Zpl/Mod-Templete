@@ -46,7 +46,6 @@ class Item(metaclass=ItemMetaclass):
     def __init__(self, html):
         self.results = {}
         for k, selector in self.selectors.items():
-            print("k:{},selector:{}".format(k,selector))
             value = selector.parse_detail(html)
             if value is None:
                 self.results[k] = ""

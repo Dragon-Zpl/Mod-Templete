@@ -4,7 +4,7 @@ import re
 
 from lxml import etree
 from pyquery import PyQuery as pq
-
+from config.configs_ import logger
 
 class Selector:
     def __init__(self, rule: str = None, func = None, attr: bool = None):
@@ -29,7 +29,7 @@ class Css(Selector):
             try:
                 return d(self.rule)[0].text
             except IndexError:
-                return None
+                return ""
         return d(self.rule)[0].attr(self.attr, None)
 
 
@@ -43,22 +43,23 @@ class Xpath(Selector):
                 elif len(d.xpath(self.rule)) == 1:
                     return d.xpath(self.rule)[0]
                 else:
-                    return None
+                    return ""
             else:
                 if len(d.xpath(self.rule)) != 0:
                     return d.xpath(self.rule)[0]
                 else:
-                    return None
+                    return ""
         except IndexError:
-            return None
+            return ""
 
 
 class Regex(Selector):
     def parse_detail(self, html):
         try:
             return re.findall(self.rule, html)[0]
-        except IndexError:
-            return None
+        except Exception as e:
+            logger.info(e)
+            return ""
 
 
 class Func(Selector):
@@ -67,4 +68,5 @@ class Func(Selector):
             html = etree.HTML(html)
             return self.func(html)
         except Exception as e:
-            raise e
+            logger.info(e)
+            return ""

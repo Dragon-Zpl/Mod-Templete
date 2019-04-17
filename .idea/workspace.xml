@@ -7,6 +7,8 @@
     <list default="true" id="8b6838f4-a343-4d03-9517-44b4d554e419" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/crawl_mod.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawl_mod.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spider/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spider/selector.py" beforeDir="false" afterPath="$PROJECT_DIR$/spider/selector.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,6 +24,7 @@
     <SUITE FILE_PATH="coverage/mod_templete$Domestic_Proxy.coverage" NAME="Domestic_Proxy Coverage Results" MODIFIED="1555297769056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/proxy" />
     <SUITE FILE_PATH="coverage/mod_templete$test.coverage" NAME="test Coverage Results" MODIFIED="1555318153775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TestModTemplete$crawl_mod.coverage" NAME="crawl_mod Coverage Results" MODIFIED="1555409339449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/TestModTemplete$test.coverage" NAME="test Coverage Results" MODIFIED="1555482583583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/mod_templete$project_helper.coverage" NAME="project_helper Coverage Results" MODIFIED="1555318493241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/mod_templete$parse.coverage" NAME="parse Coverage Results" MODIFIED="1555298872964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/spider" />
     <SUITE FILE_PATH="coverage/TestModTemplete$read.coverage" NAME="read Coverage Results" MODIFIED="1555471577354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
@@ -31,7 +34,7 @@
       <file leaf-file-name="worker.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/worker.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1953">
+            <state relative-caret-position="-1653">
               <caret line="11" column="66" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="66" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -58,23 +61,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
       <file leaf-file-name="google_download_log.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/elastic/google_download_log.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
               <caret line="30" column="29" lean-forward="true" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fetcher.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/spider/fetcher.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="11" column="53" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#47#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -91,13 +87,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="crawl_mod.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="crawl_mod.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/crawl_mod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+            <state relative-caret-position="413">
+              <caret line="139" column="73" selection-start-line="139" selection-start-column="73" selection-end-line="139" selection-end-column="73" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#3395#4400#0" />
               </folding>
             </state>
           </provider>
@@ -106,17 +103,20 @@
       <file leaf-file-name="selector.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/selector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+            <state relative-caret-position="174">
+              <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spider/item.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-453">
-              <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+            <state relative-caret-position="425">
+              <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -154,6 +154,10 @@
       <find>from uti</find>
       <find>(.+)?= &quot;(.+)</find>
       <find>_get_crawler_url</find>
+      <find>data_dic</find>
+      <find>name</find>
+      <find>self.analysis.download_first_url</find>
+      <find>self.analysis.pkg_download_url</find>
     </findStrings>
     <replaceStrings>
       <replace>insert_or_update_or_delete</replace>
@@ -162,6 +166,9 @@
       <replace>logger.info</replace>
       <replace>$1,$2</replace>
       <replace>$1= Xpath(&quot;$2)</replace>
+      <replace>item_dict</replace>
+      <replace>&quot;//a/@href&quot;</replace>
+      <replace>&quot;//div[@class='c']/a[@class='download round30']/@href&quot;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -181,14 +188,14 @@
         <option value="$PROJECT_DIR$/spider/download.py" />
         <option value="$PROJECT_DIR$/utils/init.py" />
         <option value="$PROJECT_DIR$/config/configs_.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/spider/selector.py" />
         <option value="$PROJECT_DIR$/config/read.py" />
         <option value="$PROJECT_DIR$/spider/fetcher.py" />
         <option value="$PROJECT_DIR$/spider/parse.py" />
         <option value="$PROJECT_DIR$/spider/worker.py" />
-        <option value="$PROJECT_DIR$/crawl_mod.py" />
         <option value="$PROJECT_DIR$/spider/item.py" />
+        <option value="$PROJECT_DIR$/spider/selector.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/crawl_mod.py" />
       </list>
     </option>
   </component>
@@ -253,7 +260,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Administrator/Desktop/mod-templete/spider/mysql_ops.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CrawlAndroeed" />
+    <property name="last_opened_file_path" value="E:/mydata/CrawlGoogleWithGplayCli" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -278,7 +285,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.read">
+  <component name="RunManager" selected="Python.test">
     <configuration name="crawl_mod" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="mod-templete" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -383,10 +390,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.read" />
         <item itemvalue="Python.crawl_mod" />
         <item itemvalue="Python.project_helper" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.item" />
       </list>
     </recent_temporary>
@@ -417,9 +424,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3385475" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26226014" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26226014" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -714,13 +721,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="19" column="54" lean-forward="true" selection-start-line="19" selection-start-column="54" selection-end-line="19" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/proxy/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -785,13 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/selector.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spider/parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -799,9 +792,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spider/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spider/worker.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1953">
+        <state relative-caret-position="-1653">
           <caret line="11" column="66" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="66" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -809,20 +809,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/crawl_mod.py">
+    <entry file="file://$PROJECT_DIR$/spider/selector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="46" column="32" lean-forward="true" selection-start-line="46" selection-start-column="32" selection-end-line="46" selection-end-column="32" />
+        <state relative-caret-position="174">
+          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#25#34#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spider/item.py">
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/crawl_mod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-453">
-          <caret line="52" column="17" lean-forward="true" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+        <state relative-caret-position="413">
+          <caret line="139" column="73" selection-start-line="139" selection-start-column="73" selection-end-line="139" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#3395#4400#0" />
+          </folding>
         </state>
       </provider>
     </entry>
