@@ -1,9 +1,9 @@
-
+import asyncio
 import collections
 
 
 # todo read 配置文件
-
+import aiomysql
 
 configs = collections.namedtuple("configs", "mysql, DES3, redis, logger_dict, email, tables, es, path")
 
@@ -15,7 +15,7 @@ configs.redis = {
 }
 
 configs.mysql = {"host": "120.79.2.95",
-                 "port": "3306",
+                 "port": 3306,
                  "user": "root",
                  "password": "",
                  "database": "google_play",
@@ -55,3 +55,4 @@ configs.path = {
     "cover_path": "/home/feng/pkgtest/picture/coverimg",
     "screen_path": "/home/feng/pkgtest/picture/screenshot",
 }
+
