@@ -28,6 +28,7 @@ class ItemMetaclass(type):
             """不能选择基类选择器"""
             return type.__new__(cls, name, bases, attrs)
         print('name:'+str(name))
+        print('attr:'+str(attrs))
         selectors = {}
         for k, v in attrs.items():
             if isinstance(v, Selector):
@@ -38,8 +39,6 @@ class ItemMetaclass(type):
         for k in selectors.keys():
             attrs.pop(k)
         attrs['selectors'] = selectors
-        print('selectors'+str(selectors))
-        print('attr:'+str(attrs))
         return type.__new__(cls, name, bases, attrs)
 
 
@@ -47,6 +46,7 @@ class Item(metaclass=ItemMetaclass):
     def __init__(self, html):
         self.results = {}
         for k, selector in self.selectors.items():
+            print("k:{},selector:{}".format(k,selector))
             value = selector.parse_detail(html)
             if value is None:
                 self.results[k] = ""

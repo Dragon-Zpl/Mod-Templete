@@ -57,7 +57,7 @@ class info_parse(Parser):
         item_dict = InfoItem(html)
         if len(item_dict["categories"]) > 1:
             item_dict["categories"] = ','.join(item_dict["categories"])
-
+        logger.info(item_dict)
         return item_dict
 
 t = Crawl(info_parse,check_url="https://www.androeed.ru")
